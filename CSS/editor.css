@@ -1,0 +1,182 @@
+/* styles.css */
+
+/* Tipografía general y colores */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9edf2;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #d3dce6;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #34495e;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los botones a partir de enlaces */
+a {
+    display: inline-block;
+    padding: 14px 40px;
+    margin: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    width: 220px;
+    text-align: center;
+}
+
+a:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+a:active {
+    transform: scale(0.98);
+}
+
+/* Contenedor para centrar los botones */
+.link-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Etiquetas de los campos de formulario */
+label {
+    display: block;
+    margin: 12px 0 8px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+}
+
+/* Campos de entrada y selectores */
+select, input[type="text"], input[type="file"], button {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border: 2px solid #b0c4de;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    background-color: #f5f7fa;
+    color: #34495e;
+}
+
+select:focus, input[type="text"]:focus, input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Input de archivos específico */
+input[type="file"] {
+    padding: 12px;
+    cursor: pointer;
+    background-color: #f0f4f9;
+}
+
+/* Grupo de inputs */
+.input-group {
+    margin: 30px 0;
+    display: flex;
+    justify-content: flex-start; /* Cambiado para que se alinee a la izquierda */
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente fila si no caben */
+}
+
+.input-group input[type="file"] {
+    flex: 1; /* Permite que los inputs ocupen el espacio disponible */
+    margin-right: 20px;
+    min-width: 150px; /* Añadir un ancho mínimo para asegurar que no se reduzcan demasiado */
+    transition: background-color 0.3s ease;
+}
+
+.input-group input[type="file"]:hover {
+    background-color: #e2e8f0;
+}
+
+/* Botón de envío */
+button {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 14px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsivo para pantallas más grandes */
+@media (min-width: 768px) {
+    .input-group {
+        display: flex;
+        gap: 20px;
+    }
+
+    .input-group input[type="file"] {
+        flex-basis: 32%;
+    }
+
+    button {
+        width: auto;
+        padding: 16px 50px;
+        font-size: 1.5em;
+    }
+}
+
+/* Animación sutil para el formulario */
+.container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

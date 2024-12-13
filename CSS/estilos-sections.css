@@ -1,0 +1,58 @@
+/*MAIN*/
+body{
+    margin: 0;
+}
+.seccion-tarjetas{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container-tarjeta {
+    width: 99%;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 400ms;
+    overflow: hidden; /* Agrega overflow para que no se desborden */
+    padding-bottom: 30px;
+}
+.card{
+    width: 90%;
+    flex: 1;
+    height: 10%;
+    transition: all 400ms;
+    cursor: pointer;
+    position: relative;
+    border-radius: 30px;
+    object-fit: cover;
+}
+.img-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px; /* Opcional, para coincidir con la tarjeta */
+}
+.card p{
+    position: absolute; /* Posición absoluta dentro del contenedor .card */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste perfecto para centrar */
+    margin: 0;
+    padding: 10px;
+    color: #ffffff; /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.432); /* Fondo semitransparente con mayor opacidad para un sombreado mínimo */
+    border-radius: 5px;
+    font-size: 40px; /* Tamaño del texto más grande */
+    font-weight: bold; /* Hacer el texto más destacado */
+    text-align: center; /* Alineación centrada */
+}
+.container-tarjeta:hover > .card:not(:hover) {
+    filter: grayscale(100%);
+}
+.card:hover {
+    flex: 3;
+}

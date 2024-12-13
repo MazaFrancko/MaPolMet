@@ -1,0 +1,134 @@
+/* Estilos generales del popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 320px; /* Ancho más pequeño */
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Alinear el contenido a la izquierda */
+    animation: popupAppear 0.3s ease-out;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: #e74c3c;
+}
+
+/* Estilo de los labels */
+label {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 13px; /* Tamaño más pequeño */
+}
+
+/* Estilo de los inputs */
+input {
+    width: 90%;
+    padding: 8px; /* Padding reducido */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño más pequeño */
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+input:focus {
+    border-color: #3498db;
+}
+
+/* Botón de envío */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    width: auto;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Nombre del producto */
+#productName {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Botón para abrir el popup */
+#openPopup {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px; /* Tamaño más pequeño */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#openPopup:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 500px) {
+    .popup-content {
+        padding: 15px;
+        width: 90%;
+    }
+
+    button, input {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

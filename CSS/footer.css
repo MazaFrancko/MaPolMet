@@ -1,0 +1,227 @@
+/* Estilos generales del footer */
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #040b1f;
+    padding-top: 15px;
+    font-family: Arial, sans-serif;
+    color: white;
+    bottom:0;
+}
+
+/* Estilos para el contenedor principal del footer */
+.contenedor-informacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+
+.columna-1 {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: white;
+}
+.info-footer{
+    font-size: 12px;
+    color: white;
+}
+
+.logo-empresa {
+    height: 160px;
+    padding-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logo-empresa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.columna-1 p{
+    width: 50%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+@media (min-width: 1200px) {
+    .fila-redes {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .fila-redes p {
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        transition: left 0.5s ease;
+        position: absolute;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .fila-redes:hover p {
+        left: 0;
+    }
+
+    .columna-2 a:hover {
+        background-color: #505050;
+    }
+}
+.columna-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-left: 100px;
+    width: 30%;
+    height: 100%;
+    gap: 10px;
+}
+.fila-redes{
+    align-items: center;
+    width: 140px; /* Ancho de la tarjeta */
+    height: 45px; /* Alto de la tarjeta */
+    border-radius: 10px; /* Borde redondeado */
+}
+.fila-redes p {
+    width: 100%;
+    color: white;
+}
+.direccion {
+    width: 190px;
+    height: 45px;
+    font-size: 11px;
+}
+.direccion p {
+    padding-left: 10px;
+    word-wrap: break-word;
+    font-size: 11px;
+}
+.icono-whatsapp, .icono-direccion, .icono-1, .icono-2 {
+    width: 35px;
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 3px;
+}
+.columna-3 {
+    width: 30%;
+    height: 100%;
+    padding-right: 30px;
+}
+.columna-3 iframe {
+    width: 100%;
+    height: 92%;
+}
+.contenedor-footer {
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d162e;
+    height: 20%;
+    color: white;
+    gap: 30px;
+}
+/* Estilo de los enlaces */
+.informacion a {
+    text-decoration: none;
+    color: white;
+}
+
+.informacion a:hover {
+    color: aqua;
+}
+
+/* Ajustes para pantallas de hasta 470px */
+@media (max-width: 1200px) {
+    footer {
+        height: 500px;
+    }
+
+    .contenedor-informacion {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 99%;
+    }
+
+    .columna-1 {
+        justify-content: center;
+        width: 100%;
+        height: 30%;
+    }
+
+    .columna-1 p {
+        display: none;
+    }
+
+    .columna-2 {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .fila-redes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background-color: #505050;
+        font-size: 12px;
+    }
+
+    .fila-redes p {
+        display: block;
+        color: white;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .icono-whatsapp, .icono-direccion, .icono-1, .icono-2 {
+        padding-left: 7px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .direccion {
+        padding: 0;
+    }
+
+    .columna-3 {
+        width: 90%;
+        height: 30%;
+        padding: 0 2px 13px 0;
+    }
+
+    .columna-3 iframe {
+        width: 100%;
+        height: 150px;
+    }
+
+    .contenedor-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        gap: 15px;
+    }
+}

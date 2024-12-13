@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+}
+.contenedor-busqueda {
+    width: 95%; /* El contenedor ocupa el 90% del ancho */
+    height: 460px;
+    background-color: white;
+    padding: 10px 2.5% 10px 2.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.barra-busqueda {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.barra-busqueda input[type="text"] {
+    width: 70%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.barra-busqueda input[type="submit"] {
+    width: 8%; /* El botón ocupa el 30% restante */
+    background: url('../assets/lupa.png') no-repeat center center;
+    background-size: 20px 20px;
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background-color: white;
+}
+
+.barra-busqueda input[type="submit"]:hover {
+    background-color: #f0f0f0;
+}
+
+.resultados {
+    height: 400px;
+    width: 100%;
+    padding: 5px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    position: relative; /* Mantenemos position relative para ajustar bien */
+    z-index: 1000; /* Manténlo en un valor alto para que esté encima */
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.producto {
+    width: 31%;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: black;
+}
+.producto:hover{
+    transform: scale(1.0);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.719);
+}
+
+.producto img {
+    width: 30%;
+    height: 95%;
+    border-radius: 9px;
+}
+
+.producto p {
+    margin: 0;
+    width: 70%;
+    text-align: center;
+    font-size: 18px;
+}
+/*Estilos responsivos*/
+@media (max-width:1200px){
+    .contenedor-busqueda{
+        height: 570px;
+    }
+    .resultados{
+        height: 500px;
+        position: inherit;
+    }
+    .producto{
+        width: 30%;
+    }
+    .producto img{
+        width: 35%;
+    }
+    .producto p{
+        width: 65%;
+    }
+}
+@media (max-width:780px){
+    .producto{
+        width: 29%;
+    }
+    .producto img{
+        width: 38%;
+    }
+    .producto p{
+        width: 62%;
+    }
+}
+@media(max-width: 550px){
+    .producto{
+        width: 44%;
+        height: 130px;
+    }
+    .producto img{
+        width: 40%;
+    }
+    .producto p{
+        width: 60%;
+        font-size: 16px;
+    }
+}
+@media(max-width: 470px){
+    .resultados{
+        padding: 2.5px;
+    }
+    .producto{
+        width: 43%;
+        height: 120px;
+    }
+    .producto img{
+        width: 48%;
+    }
+    .producto p{
+        width: 52%;
+        font-size: 14px;
+    }
+}

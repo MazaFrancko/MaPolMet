@@ -1,0 +1,638 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 45px;
+}
+label{
+    text-align: center;
+    font-size: 20px;
+}
+.texto_del_main {
+    font-size: 30px;
+}
+
+/* Centrar el contenido del producto */
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que se adapte a pantallas más pequeñas */
+}
+.indicador_de_seleccion {
+    border: 2px solid #007BFF; /* Azul para destacar */
+    border-radius: 5px;
+}
+
+/* Estructura principal del producto */
+.product-section {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Imagen Principal del Producto */
+.main-image {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: center;  
+}
+.img-centro {
+    width: 90%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.img-centro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores y botones */
+.color-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colores {
+    display: grid; /* Grid para organizar en columnas */
+    gap: 2px;
+    grid-template-columns: repeat(4, 1fr); /* 3 columnas de igual ancho */
+    overflow-y: auto; /* Habilitar scroll vertical */
+    padding: 4px; /* Reducir padding */
+    border: 1px solid #ddd; /* Borde para diferenciar */
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 300px; /* Reducir ancho máximo */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.colores label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.img-color {
+    width: 45px; /* Reducir tamaño de las imágenes */
+    height: 45px;
+    border-radius: 30%; /* Forma circular */
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.img-color:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+input[type="radio"] {
+    display: none; /* Ocultar el input */
+}
+input[type="radio"]:checked + .img-color {
+    border-color: #00ff00; /* Borde azul para el seleccionado */
+}
+
+
+/* Columna Derecha - Formulario */
+.right-column {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0; /* Reducido el espacio alrededor */
+    align-items: center;
+    border: solid 1px black;
+    border-radius: 5%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); /* Sombras */
+}
+
+.reservation-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    
+}
+
+textarea {
+    width: 90%;
+    padding: 12px;
+
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes redondeados */
+    resize: vertical; /* Permitir solo redimensionar en la dirección vertical */
+    height: 80%;
+    background-color: #f9f9f9; /* Fondo suave */
+    color: #333;
+    transition: all 0.3s ease; /* Transición suave para efectos de hover/focus */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+textarea:focus {
+    border-color: #007bff; /* Borde azul al hacer foco */
+    background-color: #ffffff; /* Fondo blanco cuando está enfocado */
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.2); /* Sombra suave */
+    outline: none; /* Eliminar el contorno de enfoque predeterminado */
+}
+
+textarea::placeholder {
+    color: #aaa; /* Color más suave para el texto del placeholder */
+    font-style: italic; /* Hacer el placeholder en cursiva */
+}
+
+
+input, textarea, button {
+    
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+button {
+    background-color: #255221;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 15px;
+    
+}
+
+button:hover {
+    background-color: #08ff14;
+}
+
+
+/*Estilos responsivos*/
+@media (max-width:1200px){
+    main{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .product-container{
+        height: 1200px;
+    }
+    .product-section{
+        height: 100%;
+        width: 97%;
+        display: flex;
+        flex-direction: column;
+    }
+    /*Columna Izquierda(ahora fila 1)*/
+    .left-column{
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Permite el scroll horizontal */
+        overflow-y: hidden; /* Oculta el scroll vertical */
+        scroll-behavior: smooth; /* Scroll suave */
+        justify-content: center;
+        align-items: center;
+    }
+    .img-left{
+        width: 200px;
+        height: 80%;
+        flex-shrink: 0; /* Evita que las tarjetas se reduzcan de tamaño */
+    }
+    /*Columna de en medio(ahora fila 2)*/
+    .main-image{
+        height: 55%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+    }
+    .img-centro{
+        height: 90%;
+        width: 95%;
+    }
+    /*Columna derecha(ahora fila 3)*/
+    .right-column{
+        height: 25%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .right-column h2{
+        height: 10%;
+        font-size: 35px;
+    }
+    .product-block{
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+    }
+    .product-plans{
+        width: 40%;
+        height: 100%;
+        margin: 0;
+    }
+    .color-buttons{
+        margin: 0;
+        width: 35%;
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+    }
+    .description{
+        height: 10%;
+    }
+    .colores{
+        width: 98%;
+        height: 70%;
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .img-color{
+        width: 30px;
+        height: 30px;
+    }
+    .precio-reserva{
+        width: 25%;
+        height: 100%;
+    }
+}
+@media (max-width:480px){
+    .product-container{
+        height: 1250px;
+        padding: 0;
+    }
+    .product-section{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        gap: 0;
+    }
+    /*Columna Izquierda(ahora fila 1)*/
+    .left-column{
+        height: 19%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Permite el scroll horizontal */
+        overflow-y: hidden; /* Oculta el scroll vertical */
+        scroll-behavior: smooth; /* Scroll suave */
+        justify-content: space-between;
+    }
+    .img-left{
+        width: 170px;
+        height: 80%;
+        flex-shrink: 0; /* Evita que las tarjetas se reduzcan de tamaño */
+    }
+    /*Columna de en medio(ahora fila 2)*/
+    .main-image{
+        height: 30%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+    }
+    .img-centro{
+        height: 90%;
+        width: 80%;
+    }
+    /*Columna derecha(ahora fila 3)*/
+    .right-column{
+        height: 51%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+    .right-column h2{
+        height: 2%;
+        font-size: 25px;
+    }
+    .product-block{
+        height: 98%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-plans{
+        width: 100%;
+        height: 45%;
+        margin: 0;
+    }
+    .product-plans p{
+        margin: 0;
+        padding-top: 5px;
+        padding-bottom: 8px;
+        height: 5%;
+    }
+    .planos{
+        width: 100%;
+        height: 95%;
+    }
+    .img-planos{
+        width: 70%;
+        height: 95%;
+    }
+    .color-buttons{
+        margin: 0;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+    }
+    .description{
+        height: 10%;
+        padding-top: 10px;
+        margin: 0;
+    }
+    .colores{
+        width: 98%;
+        height: 90%;
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .img-color{
+        width: 30px;
+        height: 30px;
+    }
+    .precio-reserva{
+        width: 100%;
+        height: 15%;
+    }
+    .colors-price{
+        margin: 0;
+        padding-top: 20px;
+    }
+    #openPopup{
+        margin: 0 50px 0 140px;
+    }
+}
+/* Estilos generales del footer */
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #040b1f;
+    padding-top: 15px;
+    font-family: Arial, sans-serif;
+    color: white;
+    bottom:0;
+}
+
+/* Estilos para el contenedor principal del footer */
+.contenedor-informacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+
+.columna-1 {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: white;
+}
+
+.logo-empresa {
+    height: 160px;
+    padding-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logo-empresa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.columna-1 p{
+    width: 50%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+@media (min-width: 1200px) {
+    .fila-redes {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .fila-redes p {
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        transition: left 0.5s ease;
+        position: absolute;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .fila-redes:hover p {
+        left: 0;
+    }
+
+    .columna-2 a:hover {
+        background-color: #505050;
+    }
+}
+.columna-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-left: 100px;
+    width: 30%;
+    height: 100%;
+    gap: 10px;
+}
+.fila-redes{
+    align-items: center;
+    width: 140px; /* Ancho de la tarjeta */
+    height: 45px; /* Alto de la tarjeta */
+    border-radius: 10px; /* Borde redondeado */
+}
+.fila-redes p {
+    width: 100%;
+    color: white;
+}
+.direccion {
+    width: 190px;
+    height: 45px;
+    font-size: 11px;
+}
+.direccion p {
+    padding-left: 10px;
+    word-wrap: break-word;
+    font-size: 11px;
+}
+.icono-whatsapp, .icono-direccion, .icono-1, .icono-2 {
+    width: 35px;
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 3px;
+}
+.columna-3 {
+    width: 30%;
+    height: 100%;
+    padding-right: 30px;
+}
+.columna-3 iframe {
+    width: 100%;
+    height: 92%;
+}
+.contenedor-footer {
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d162e;
+    height: 20%;
+    color: white;
+    gap: 30px;
+}
+/* Estilo de los enlaces */
+.informacion a {
+    text-decoration: none;
+    color: white;
+}
+
+.informacion a:hover {
+    color: aqua;
+}
+
+/* Ajustes para pantallas de hasta 470px */
+@media (max-width: 1200px) {
+    footer {
+        height: 500px;
+    }
+
+    .contenedor-informacion {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 99%;
+    }
+
+    .columna-1 {
+        justify-content: center;
+        width: 100%;
+        height: 30%;
+    }
+
+    .columna-1 p {
+        display: none;
+    }
+
+    .columna-2 {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .fila-redes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background-color: #505050;
+        font-size: 12px;
+    }
+
+    .fila-redes p {
+        display: block;
+        color: white;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .icono-whatsapp, .icono-direccion, .icono-1, .icono-2 {
+        padding-left: 7px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .direccion {
+        padding: 0;
+    }
+
+    .columna-3 {
+        width: 90%;
+        height: 30%;
+        padding-bottom: 10px;
+    }
+
+    .columna-3 iframe {
+        width: 100%;
+        height: 150px;
+    }
+
+    .contenedor-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        gap: 15px;
+    }
+}
